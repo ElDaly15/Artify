@@ -1,3 +1,4 @@
+import 'package:coffee_shop/core/utils/app_images.dart';
 import 'package:coffee_shop/core/utils/app_styles.dart';
 import 'package:coffee_shop/featuers/on_boarding/presentation/views/widgets/on_boarding_container.dart';
 import 'package:coffee_shop/featuers/on_boarding/presentation/views/widgets/stack_of_onboarding_images.dart';
@@ -34,6 +35,19 @@ class OnBoardingViewBody extends StatelessWidget {
           ],
         ),
         const CointaierOfOnboardingDetails(),
+        Positioned(
+          bottom: MediaQuery.of(context).size.height * 0.1,
+          child: Image.asset(
+            Assets.imagesShadow,
+          ),
+        ),
+        Positioned(
+          bottom: MediaQuery.of(context).size.height * 0.05,
+          right: MediaQuery.of(context).size.width * -0.1,
+          child: Image.asset(
+            Assets.imagesShadow,
+          ),
+        ),
       ],
     );
   }

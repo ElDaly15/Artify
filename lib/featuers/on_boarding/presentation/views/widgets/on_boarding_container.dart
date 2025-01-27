@@ -1,5 +1,8 @@
+import 'package:coffee_shop/core/utils/app_colors.dart';
+import 'package:coffee_shop/core/utils/app_images.dart';
 import 'package:coffee_shop/core/utils/app_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class CointaierOfOnboardingDetails extends StatelessWidget {
   const CointaierOfOnboardingDetails({super.key});
@@ -32,22 +35,73 @@ class CointaierOfOnboardingDetails extends StatelessWidget {
             ],
           ),
         ),
-        child: Column(
-          children: [
-            const Spacer(),
-            Center(
-              child: Text(
-                'Coffee Shop',
-                style: TextStyles.font11SemiBold(context),
+        child: const ColumnOfContainer(),
+      ),
+    );
+  }
+}
+
+class ColumnOfContainer extends StatelessWidget {
+  const ColumnOfContainer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 12),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Spacer(),
+          Center(
+            child: Text(
+              'Discover, Collect',
+              style: TextStyles.font24Bold(context).copyWith(fontSize: 40),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Center(
+                child: Text(
+                  'and Sell',
+                  style: TextStyles.font24Bold(context).copyWith(fontSize: 35),
+                  textAlign: TextAlign.center,
+                ),
               ),
+              const SizedBox(
+                width: 10,
+              ),
+              Column(
+                children: [
+                  Center(
+                    child: Text(
+                      'NFTs',
+                      style: TextStyles.font24Bold(context).copyWith(
+                          fontSize: 30, color: AppColors.mainColorTheme),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  SvgPicture.asset(
+                    Assets.imagesLineMark,
+                  ),
+                ],
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Center(
+            child: Text(
+              'A vibrant marketplace where creators showcase their unique NFTs.',
+              style: TextStyles.font20Medium(context)
+                  .copyWith(color: const Color(0xff979796)),
+              textAlign: TextAlign.center,
             ),
-            Text(
-              'Find the best coffee near you',
-              style: TextStyles.font20Medium(context),
-            ),
-            const Spacer(),
-          ],
-        ),
+          ),
+          const Spacer(flex: 1),
+        ],
       ),
     );
   }
