@@ -42,7 +42,7 @@ class OnBoardingViewBody extends StatelessWidget {
           ),
         ),
         Positioned(
-          bottom: MediaQuery.of(context).size.height * 0.05,
+          bottom: MediaQuery.of(context).size.height * 0.2,
           right: MediaQuery.of(context).size.width * -0.1,
           child: Image.asset(
             Assets.imagesShadow,
