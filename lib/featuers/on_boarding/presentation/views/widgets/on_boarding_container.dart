@@ -2,7 +2,8 @@ import 'package:coffee_shop/featuers/on_boarding/presentation/views/widgets/colu
 import 'package:flutter/material.dart';
 
 class CointaierOfOnboardingDetails extends StatelessWidget {
-  const CointaierOfOnboardingDetails({super.key});
+  const CointaierOfOnboardingDetails({super.key, required this.pageController});
+  final PageController pageController;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,9 @@ class CointaierOfOnboardingDetails extends StatelessWidget {
             ],
           ),
         ),
-        child: const ColumnOfContainer(),
+        child: ColumnOfContainer(
+          pageController: pageController,
+        ),
       ),
     );
   }

@@ -5,8 +5,36 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class ColumnOfContainer extends StatelessWidget {
-  const ColumnOfContainer({super.key});
+class ColumnOfContainer extends StatefulWidget {
+  const ColumnOfContainer({super.key, required this.pageController});
+
+  final PageController pageController;
+
+  @override
+  State<ColumnOfContainer> createState() => _ColumnOfContainerState();
+}
+
+class _ColumnOfContainerState extends State<ColumnOfContainer> {
+  int index = 0;
+  @override
+  void initState() {
+    super.initState();
+    widget.pageController.addListener(_pageControllerListener);
+  }
+
+  void _pageControllerListener() {
+    if (mounted) {
+      setState(() {
+        index = widget.pageController.page?.round() ?? 0;
+      });
+    }
+  }
+
+  @override
+  void dispose() {
+    widget.pageController.removeListener(_pageControllerListener);
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -74,29 +102,47 @@ class ColumnOfContainer extends StatelessWidget {
             child: Row(
               children: [
                 SmoothPageIndicator(
-                    controller: PageController(), // PageController
+                    controller: widget.pageController, // PageController
                     count: 4,
                     effect: WormEffect(
                       dotWidth: 10.0,
                       dotHeight: 10.0,
                       activeDotColor: AppColors.blackColorTheme,
                       dotColor: const Color(0xff171816).withOpacity(0.3),
-                    ), // your preferred effect
+                    ),
+                    // your preferred effect
                     onDotClicked: (index) {}),
                 const Spacer(),
-                IconButton(
-                  style: IconButton.styleFrom(
-                      padding: const EdgeInsets.all(18),
-                      backgroundColor: AppColors.blackColorTheme,
-                      iconSize: 28),
-                  onPressed: () {
-                    // ignore: avoid_print
-                  },
-                  icon: const Icon(
-                    Icons.arrow_forward_outlined,
-                    color: Colors.white,
-                  ),
-                ),
+                index == 3
+                    ? IconButton(
+                        style: IconButton.styleFrom(
+                            padding: const EdgeInsets.all(18),
+                            backgroundColor: AppColors.blackColorTheme,
+                            iconSize: 28),
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.start,
+                          color: Colors.white,
+                        ),
+                      )
+                    : IconButton(
+                        style: IconButton.styleFrom(
+                            padding: const EdgeInsets.all(18),
+                            backgroundColor: AppColors.blackColorTheme,
+                            iconSize: 28),
+                        onPressed: () {
+                          final nextPage = (index + 1) % 4;
+                          widget.pageController.animateToPage(
+                            nextPage,
+                            duration: const Duration(milliseconds: 500),
+                            curve: Curves.easeInOut,
+                          );
+                        },
+                        icon: const Icon(
+                          Icons.arrow_forward_outlined,
+                          color: Colors.white,
+                        ),
+                      ),
               ],
             ),
           ),
