@@ -9,21 +9,18 @@ class StackOfOnboardingImages extends StatelessWidget {
     return Stack(
       children: [
         Positioned(
-          right: 30,
-          bottom: 50,
+          right: MediaQuery.of(context).size.width * 0.04,
+          bottom: MediaQuery.of(context).size.height * 0.0001,
           child: Align(
             alignment: Alignment.centerLeft,
-            child: Image.asset(
-              Assets.imagesOnboardingTwo,
-              scale: 1.2,
-            ),
+            child: Image.asset(Assets.imagesOnboardingTwo, scale: 1.2),
           ),
         ),
         Align(
           alignment: Alignment.centerLeft,
           child: Image.asset(
             Assets.imagesOnboardingTwo,
-            scale: 0.9,
+            scale: 1,
           ),
         ),
       ],
