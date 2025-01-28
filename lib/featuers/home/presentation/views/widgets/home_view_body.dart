@@ -1,3 +1,4 @@
+import 'package:coffee_shop/featuers/home/presentation/views/widgets/best_artist_category.dart';
 import 'package:coffee_shop/featuers/home/presentation/views/widgets/container_of_top_collection_item.dart';
 import 'package:coffee_shop/featuers/home/presentation/views/widgets/list_view_of_header_section.dart';
 import 'package:coffee_shop/featuers/home/presentation/views/widgets/main_title_text_rich.dart';
@@ -9,37 +10,42 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
+    return SingleChildScrollView(
+      physics: const ClampingScrollPhysics(),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SafeArea(
-            child: SizedBox(
-              height: 10,
-            ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.08,
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.symmetric(horizontal: 22),
             child: MainTitleTextRich(),
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
-          ListViewOfHeaderSelections(),
-          SizedBox(
+          const ListViewOfHeaderSelections(),
+          const SizedBox(
             height: 20,
           ),
-          CustomHeader(
+          const CustomHeader(
             title: 'Top Collection 🔥',
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
-          ContainerOfTopCollectionItem(),
-          SizedBox(height: 30),
-          CustomHeader(
+          const ContainerOfTopCollectionItem(),
+          const SizedBox(height: 30),
+          const CustomHeader(
             title: 'Best Artist',
           ),
+          const SizedBox(height: 15),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 22),
+            child: BestArtistCategory(),
+          ),
+          const SizedBox(height: 110),
         ],
       ),
     );

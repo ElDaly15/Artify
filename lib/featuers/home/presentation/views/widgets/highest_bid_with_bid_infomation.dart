@@ -48,28 +48,31 @@ class HighestBidWithBidInformation extends StatelessWidget {
             ],
           ),
           const Spacer(),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(22),
-              color: AppColors.blackColorTheme,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SvgPicture.asset(
-                  Assets.imagesBid,
-                  height: 25,
-                ),
-                const SizedBox(
-                  width: 5,
-                ),
-                Text(
-                  'Place a Bid',
-                  style: TextStyles.font18SemiBold(context)
-                      .copyWith(color: Colors.white),
-                ),
-              ],
+          InkWell(
+            onTap: () {},
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(22),
+                color: AppColors.blackColorTheme,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SvgPicture.asset(
+                    Assets.imagesBid,
+                    height: 25,
+                  ),
+                  const SizedBox(
+                    width: 5,
+                  ),
+                  Text(
+                    'Place a Bid',
+                    style: TextStyles.font18SemiBold(context)
+                        .copyWith(color: Colors.white),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
