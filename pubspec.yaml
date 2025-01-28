@@ -30,11 +30,11 @@ environment:
 dependencies:
   cupertino_icons: ^1.0.8
   device_preview: ^1.2.0
-  get: ^4.6.6
-
   flutter:
     sdk: flutter
+  flutter_dash: ^1.0.0
   flutter_svg: ^2.0.17
+  get: ^4.6.6
   smooth_page_indicator: ^1.2.0+3
 
 dev_dependencies:

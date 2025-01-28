@@ -10,6 +10,14 @@ class Assets {
   /// assets/images/Banner.png
   static const String imagesBanner = "assets/images/Banner.png";
 
+  /// Assets for imagesBid
+  /// assets/images/bid.svg
+  static const String imagesBid = "assets/images/bid.svg";
+
+  /// Assets for imagesEth
+  /// assets/images/eth.svg
+  static const String imagesEth = "assets/images/eth.svg";
+
   /// Assets for imagesLineMark
   /// assets/images/line_mark.svg
   static const String imagesLineMark = "assets/images/line_mark.svg";
@@ -17,6 +25,10 @@ class Assets {
   /// Assets for imagesLogoMyArtify
   /// assets/images/logoMyArtify.png
   static const String imagesLogoMyArtify = "assets/images/logoMyArtify.png";
+
+  /// Assets for imagesMenu
+  /// assets/images/menu.svg
+  static const String imagesMenu = "assets/images/menu.svg";
 
   /// Assets for imagesNft1
   /// assets/images/nft1.png
