@@ -1,9 +1,11 @@
 import 'package:coffee_shop/core/utils/app_colors.dart';
 import 'package:coffee_shop/core/utils/app_images.dart';
 import 'package:coffee_shop/core/utils/app_styles.dart';
+import 'package:coffee_shop/featuers/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:get/get.dart' as g;
 
 class ColumnOfContainer extends StatefulWidget {
   const ColumnOfContainer({super.key, required this.pageController});
@@ -119,7 +121,11 @@ class _ColumnOfContainerState extends State<ColumnOfContainer> {
                             padding: const EdgeInsets.all(18),
                             backgroundColor: AppColors.blackColorTheme,
                             iconSize: 28),
-                        onPressed: () {},
+                        onPressed: () {
+                          g.Get.off(() => const HomeView(),
+                              transition: g.Transition.fade,
+                              duration: const Duration(milliseconds: 350));
+                        },
                         icon: const Icon(
                           Icons.start,
                           color: Colors.white,
