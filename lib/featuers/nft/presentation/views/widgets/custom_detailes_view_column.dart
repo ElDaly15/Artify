@@ -37,6 +37,14 @@ class CustomDetailsViewColumn extends StatelessWidget {
           'Description',
           style: TextStyles.font24Bold(context).copyWith(),
         ),
+        const SizedBox(
+          height: 10,
+        ),
+        Text(
+          'Each Apes NFT is a unique masterpiece, and crafted by artists around the globe. Each Apes NFT is a unique masterpiece, and crafted by artists around the globe. Each Apes NFT is a unique masterpiece, and crafted by artists around the globe. Each Apes NFT is a unique masterpiece, and crafted by artists around the globe.',
+          style: TextStyles.font20Regular(context)
+              .copyWith(color: const Color.fromARGB(255, 141, 141, 141)),
+        ),
       ],
     );
   }
