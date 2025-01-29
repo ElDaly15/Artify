@@ -1,8 +1,9 @@
 import 'package:coffee_shop/core/utils/app_colors.dart';
-import 'package:coffee_shop/core/utils/app_images.dart';
 import 'package:coffee_shop/core/utils/app_styles.dart';
+import 'package:coffee_shop/featuers/home/presentation/views/widgets/dashes_of_container.dart';
+import 'package:coffee_shop/featuers/nft/presentation/views/widgets/crown_with_title_widget.dart';
+import 'package:coffee_shop/featuers/nft/presentation/views/widgets/row_of_sold_and_bid_time_remaining.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class CustomDetailsViewColumn extends StatelessWidget {
   const CustomDetailsViewColumn({super.key});
@@ -20,27 +21,21 @@ class CustomDetailsViewColumn extends StatelessWidget {
         const SizedBox(
           height: 10,
         ),
-        Row(
-          children: [
-            FittedBox(
-              fit: BoxFit.scaleDown,
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width * 0.42,
-                child: Text(
-                  'Hypebest Apes B',
-                  style: TextStyles.font24SemiBold(context),
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 1,
-                ),
-              ),
-            ),
-            const Spacer(),
-            CircleAvatar(
-              radius: 23,
-              backgroundColor: AppColors.secondaryColorFirst,
-              child: SvgPicture.asset(Assets.imagesCrown),
-            ),
-          ],
+        const CrownWithTitleWidget(),
+        const SizedBox(
+          height: 10,
+        ),
+        const RowOfSoldAndBidTimeRemaining(),
+        const SizedBox(
+          height: 20,
+        ),
+        const DashesOfContainer(),
+        const SizedBox(
+          height: 20,
+        ),
+        Text(
+          'Description',
+          style: TextStyles.font24Bold(context).copyWith(),
         ),
       ],
     );

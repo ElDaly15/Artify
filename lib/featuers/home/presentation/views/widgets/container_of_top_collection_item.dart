@@ -10,7 +10,7 @@ class ContainerOfTopCollectionItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        g.Get.off(() => const NftView(),
+        g.Get.to(() => const NftView(),
             transition: g.Transition.fade,
             duration: const Duration(milliseconds: 400));
       },

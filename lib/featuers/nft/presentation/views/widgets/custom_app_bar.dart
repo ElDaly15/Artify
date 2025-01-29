@@ -14,7 +14,9 @@ class CustomAppBarForNftDetails extends StatelessWidget {
           style: IconButton.styleFrom(
             padding: EdgeInsets.zero,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: const Icon(
             Icons.arrow_back_ios,
             color: AppColors.blackColorTheme,

@@ -12,7 +12,7 @@ class ImageContainer extends StatelessWidget {
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(20)),
         image: DecorationImage(
-          image: AssetImage(Assets.imagesNft1),
+          image: AssetImage(Assets.imagesNft2),
           fit: BoxFit.cover,
         ),
       ),
