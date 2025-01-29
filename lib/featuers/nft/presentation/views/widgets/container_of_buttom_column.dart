@@ -10,12 +10,22 @@ class ContainerOfButtomColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.only(
-          topRight: Radius.circular(22),
-          topLeft: Radius.circular(22),
+      padding: const EdgeInsets.symmetric(horizontal: 12),
+      width: double.infinity,
+      decoration: BoxDecoration(
+        borderRadius: const BorderRadius.only(
+          topRight: Radius.circular(30),
+          topLeft: Radius.circular(30),
         ),
-        boxShadow: [],
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.12), // Shadow color
+            spreadRadius: 1, // Spread of the shadow
+            blurRadius: 12, // Blur effect
+            offset: const Offset(0, -4), // Moves shadow upwards
+          ),
+        ],
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 20),

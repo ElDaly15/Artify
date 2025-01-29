@@ -7,28 +7,31 @@ class CustomAppBarForNftDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        IconButton(
-          iconSize: 24,
-          style: IconButton.styleFrom(
-            padding: EdgeInsets.zero,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 22),
+      child: Row(
+        children: [
+          IconButton(
+            iconSize: 24,
+            style: IconButton.styleFrom(
+              padding: EdgeInsets.zero,
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(
+              Icons.arrow_back_ios,
+              color: AppColors.blackColorTheme,
+            ),
           ),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: const Icon(
-            Icons.arrow_back_ios,
-            color: AppColors.blackColorTheme,
+          const Spacer(),
+          Text(
+            'Detail',
+            style: TextStyles.font24Bold(context),
           ),
-        ),
-        const Spacer(),
-        Text(
-          'Detail',
-          style: TextStyles.font24Bold(context),
-        ),
-        const Spacer(),
-      ],
+          const Spacer(),
+        ],
+      ),
     );
   }
 }

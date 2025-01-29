@@ -9,40 +9,37 @@ class NftViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 22),
-      child: Column(
-        children: [
-          Expanded(
-            child: SingleChildScrollView(
-              physics: ClampingScrollPhysics(),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SafeArea(
-                    child: SizedBox(
-                      height: 10,
-                    ),
-                  ),
-                  CustomAppBarForNftDetails(),
-                  SizedBox(
+    return const Column(
+      children: [
+        Expanded(
+          child: SingleChildScrollView(
+            physics: ClampingScrollPhysics(),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SafeArea(
+                  child: SizedBox(
                     height: 10,
                   ),
-                  ImageContainer(),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  CustomDetailsViewColumn(),
-                  SizedBox(
-                    height: 15,
-                  ),
-                ],
-              ),
+                ),
+                CustomAppBarForNftDetails(),
+                SizedBox(
+                  height: 10,
+                ),
+                ImageContainer(),
+                SizedBox(
+                  height: 20,
+                ),
+                CustomDetailsViewColumn(),
+                SizedBox(
+                  height: 15,
+                ),
+              ],
             ),
           ),
-          ContainerOfButtomColumn(),
-        ],
-      ),
+        ),
+        ContainerOfButtomColumn(),
+      ],
     );
   }
 }
