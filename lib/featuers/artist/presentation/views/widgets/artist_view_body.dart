@@ -47,53 +47,64 @@ class _ArtistViewBodyState extends State<ArtistViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 22),
-      child: Column(
-        children: [
-          const SafeArea(
-            child: SizedBox(),
-          ),
-          const CustomAppBarWithTextAndBackBtm(
-            title: 'Collection',
-          ),
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.02,
-          ),
-          const StackOfProfileImageWithBanner(),
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.052,
-          ),
-          const ArtistDetailsColumn(),
-          CustomTabBar(
-            tabBarController: _tabBarController,
-            height: 35,
-            itemCount: pageCount,
-            builder: getTabbarChild,
-            indicator: LinearIndicator(
-                color: AppColors.mainColorTheme, bottom: 2, height: 1.7),
-            pageController: _controller,
-          ),
-          Expanded(
-            child: PageView.builder(
-              controller: _controller,
-              itemCount: pageCount,
-              itemBuilder: (context, index) {
-                return ListView.builder(
-                  padding: EdgeInsets.zero,
-                  itemCount: 1,
-                  itemBuilder: (context, index) {
-                    return const Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-                      child: GrideViewOfTabBarItems(),
-                    );
-                  },
-                );
-              },
+    return SingleChildScrollView(
+      physics: const ClampingScrollPhysics(),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 22),
+        child: Column(
+          children: [
+            const SafeArea(
+              child: SizedBox(),
             ),
-          ),
-        ],
+            const CustomAppBarWithTextAndBackBtm(
+              title: 'Collection',
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.02,
+            ),
+            const StackOfProfileImageWithBanner(),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.056,
+            ),
+            const ArtistDetailsColumn(),
+            CustomTabBar(
+              tabBarController: _tabBarController,
+              height: 35,
+              itemCount: pageCount,
+              builder: getTabbarChild,
+              indicator: LinearIndicator(
+                  color: AppColors.mainColorTheme, bottom: 2, height: 1.7),
+              pageController: _controller,
+            ),
+            SizedBox(
+              height:
+                  MediaQuery.of(context).size.height * 0.02, // Add some spacing
+            ),
+            // Removed Expanded and used a fixed height container for PageView
+            SizedBox(
+              height: MediaQuery.of(context).size.height *
+                  0.5, // Set a fixed height
+              child: PageView.builder(
+                physics: const ClampingScrollPhysics(),
+                controller: _controller,
+                itemCount: pageCount,
+                itemBuilder: (context, index) {
+                  return ListView.builder(
+                    padding: EdgeInsets.zero,
+                    itemCount: 1,
+                    itemBuilder: (context, index) {
+                      return const Padding(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                        child: GrideViewOfTabBarItems(),
+                      );
+                    },
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

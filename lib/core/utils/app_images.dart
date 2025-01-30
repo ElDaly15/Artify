@@ -54,6 +54,10 @@ class Assets {
   /// assets/images/nft5.png
   static const String imagesNft5 = "assets/images/nft5.png";
 
+  /// Assets for imagesNft7
+  /// assets/images/nft7.png
+  static const String imagesNft7 = "assets/images/nft7.png";
+
   /// Assets for imagesOnboardingOne
   /// assets/images/onboarding_one.png
   static const String imagesOnboardingOne = "assets/images/onboarding_one.png";

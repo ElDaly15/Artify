@@ -1,23 +1,24 @@
 import 'package:coffee_shop/core/utils/app_colors.dart';
-import 'package:coffee_shop/core/utils/app_images.dart';
 import 'package:coffee_shop/core/utils/app_styles.dart';
+import 'package:coffee_shop/featuers/artist/data/models/artist_model.dart';
 import 'package:flutter/material.dart';
 
 class ContainerOfTabBar extends StatelessWidget {
-  const ContainerOfTabBar({super.key});
+  const ContainerOfTabBar({super.key, required this.artistModel});
+  final ArtistModel artistModel;
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         Container(
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage(Assets.imagesNft2),
+              image: AssetImage(artistModel.image),
               fit: BoxFit.cover,
             ),
             color: AppColors.blackColorTheme,
-            borderRadius: BorderRadius.all(
+            borderRadius: const BorderRadius.all(
               Radius.circular(20),
             ),
           ),
@@ -29,14 +30,14 @@ class ContainerOfTabBar extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                '#14415',
+                artistModel.code,
                 style: TextStyles.font20SemiBold(context)
                     .copyWith(color: AppColors.mainColorTheme),
               ),
               FittedBox(
                 fit: BoxFit.scaleDown,
                 child: Text(
-                  'Hypebest Apes B',
+                  artistModel.title,
                   style: TextStyles.font18SemiBold(context)
                       .copyWith(color: Colors.white),
                 ),
