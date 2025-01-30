@@ -35,6 +35,8 @@ dependencies:
     sdk: flutter
   flutter_custom_tab_bar: ^1.2.1
   flutter_dash: ^1.0.0
+  flutter_launcher_icons: ^0.14.3
+  flutter_native_splash: ^2.4.4
   flutter_svg: ^2.0.17
   get: ^4.6.6
   iconly: ^1.0.1
@@ -44,10 +46,18 @@ dev_dependencies:
   flutter_lints: ^4.0.0
   flutter_test:
     sdk: flutter
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/ic_launcher.png" # Your logo path
+  adaptive_icon_background: "#000000" # Background color for Android adaptive icons
+  adaptive_icon_foreground: "assets/images/ic_launcher.png" # Foreground image for Android adaptive icons
 
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
-# The following section is specific to Flutter packages.
+flutter_native_splash:
+  color: "#000000"
+  android_12:
+    icon_background_color: "#000000"
+    icon_background_color_dark: "#000000"
 flutter:
 
   # The following line ensures that the Material Icons font is
