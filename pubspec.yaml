@@ -33,6 +33,7 @@ dependencies:
   device_preview: ^1.2.0
   flutter:
     sdk: flutter
+  flutter_custom_tab_bar: ^1.2.1
   flutter_dash: ^1.0.0
   flutter_svg: ^2.0.17
   get: ^4.6.6
