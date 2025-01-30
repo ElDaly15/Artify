@@ -22,7 +22,12 @@ class NftViewBody extends StatelessWidget {
                     height: 10,
                   ),
                 ),
-                CustomAppBarForNftDetails(),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 22),
+                  child: CustomAppBarWithTextAndBackBtm(
+                    title: 'Detail',
+                  ),
+                ),
                 SizedBox(
                   height: 10,
                 ),

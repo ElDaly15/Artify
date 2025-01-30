@@ -65,5 +65,9 @@ class Assets {
   /// Assets for imagesShadow
   /// assets/images/Shadow.png
   static const String imagesShadow = "assets/images/Shadow.png";
+
+  /// Assets for imagesVerify
+  /// assets/images/verify.svg
+  static const String imagesVerify = "assets/images/verify.svg";
 }
 
